@@ -18,8 +18,6 @@ return [
         resource_path('views/livewire'),
     ],
 
-    'asset_url' => env('APP_URL'),
-
     /*
     |---------------------------------------------------------------------------
     | Component Namespaces

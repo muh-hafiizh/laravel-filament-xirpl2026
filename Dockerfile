@@ -14,11 +14,12 @@ COPY . .
 # Install dependensi mode production
 RUN composer install --no-dev --optimize-autoloader
 
-# Publish aset Filament & Cache View secara otomatis saat build
+# Publish aset Filament & Livewire menjadi file fisik statis
 RUN php artisan filament:assets
+RUN php artisan livewire:publish --assets
 RUN php artisan view:cache
 
-# Set permission
+# Pastikan folder storage bisa ditulisi
 RUN chmod -R 777 storage bootstrap/cache
 
 # Jalankan FrankenPHP di port 8000
